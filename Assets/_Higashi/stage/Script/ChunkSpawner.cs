@@ -1,7 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChunckSpawer : MonoBehaviour
+/// <summary>
+/// ’n–Ê‚Ì¶¬‚Æ‰ñû‚ğŠÇ—‚·‚éƒNƒ‰ƒX
+/// </summary>
+public class ChunkSpawner : MonoBehaviour
 {
     [Header("İ’è")]
     [SerializeField] private Transform _player;

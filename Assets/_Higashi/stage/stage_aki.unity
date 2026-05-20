@@ -886,7 +886,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1077885615}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &934008709
@@ -1242,7 +1243,7 @@ RectTransform:
   - {fileID: 1739901021}
   - {fileID: 934008710}
   - {fileID: 1830727761}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 879838221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1555,7 +1556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fireBox: {fileID: 668686296}
-  _moveSpeed: 100
+  _moveSpeed: 0
 --- !u!54 &2040177204
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1611,6 +1612,5 @@ SceneRoots:
   - {fileID: 1024587166}
   - {fileID: 627817075}
   - {fileID: 872359329}
-  - {fileID: 1077885615}
   - {fileID: 1647551652}
   - {fileID: 879838221}

@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+/// <summary>
+/// 地面のチャンクのプールを管理するクラス
+/// </summary>
 public class ChunkPool : MonoBehaviour
 {
     [SerializeField] private StageConfig[] _stageConfigs;
