@@ -42,7 +42,7 @@ public class Fuel : MonoBehaviour
 
         if (target.TryGetComponent(out FireBox fireBox))
         {
-            fireBox.ChangeFire(_firePower);
+            fireBox.AddFire(_firePower);
         }
         else
         {

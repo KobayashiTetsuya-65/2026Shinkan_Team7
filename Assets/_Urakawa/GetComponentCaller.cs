@@ -1,10 +1,25 @@
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.UI;
+using System.Collections;
 
 public class GetComponentCaller : MonoBehaviour
 {
-    [SerializeField] private string _sceneName;
+    /// <summary>
+    /// シーン遷移
+    /// </summary>
     public void Change_button()
     {
-        ChangeScene.Instance.SceneLoad(_sceneName);
+        StartCoroutine(ChangeSceneCoroutine());
+    }
+
+    private IEnumerator ChangeSceneCoroutine()
+    {
+        // 2秒待機
+        yield return new WaitForSeconds(2f);
+
+        // シーン遷移
+       // ChangeScene.Instance.SceneLoad();
     }
 }
+
