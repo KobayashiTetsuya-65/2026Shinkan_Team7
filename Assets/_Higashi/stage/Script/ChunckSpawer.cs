@@ -28,9 +28,21 @@ public class ChunckSpawer : MonoBehaviour
     private void Update()
     {
         // プレイヤーが次のスポーンポイントに近づいたら新しいチャンクを生成
-        if (_player.position.z + _spawnDistance > _nextSpawnZ)
+        while (_player.position.z + _spawnDistance > _nextSpawnZ)
         {
             SpawnChunk(CurrentBiome);
+        }
+
+        //後ろのチャンクを回収
+        while (_activeChunks.Count > 0)
+        {
+            var (obj, biome) = _activeChunks.Peek();
+            if (obj.transform.position.z + _chunkLength < _player.position.z - _spawnDistance)
+            {
+                _chunkPool.ReleaseChunk(biome, obj);
+                _activeChunks.Dequeue();
+            }
+            else break;
         }
     }
     // 生成されたチャンクとそのバイオームの情報を保持するキュー
