@@ -42,6 +42,11 @@ public class FireBox : MonoBehaviour
         _fireMeter.ChangeMeter(CurrntFire);
     }
 
+    public void SetFire(float value)
+    {
+        CurrntFire = Mathf.Clamp(value,0,100);
+        _fireMeter.ChangeMeter(CurrntFire);
+    }
     private float CurrentDeltaMag(StageType stage)
     {
         return stage switch
