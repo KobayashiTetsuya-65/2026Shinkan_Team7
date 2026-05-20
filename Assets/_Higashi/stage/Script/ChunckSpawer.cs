@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static TestEnum;
 
 public class ChunckSpawer : MonoBehaviour
 {
@@ -13,16 +12,16 @@ public class ChunckSpawer : MonoBehaviour
     // プレイヤーがチャンクの最遠い地点からにこの距離に近づいたら新しいチャンクを生成する
     [SerializeField] private float _spawnDistance = 50f;
 
-    // 現在のバイオームタイプ（外部から変更可能）
-    public TestBiomeType CurrentBiome { get; set; } = TestBiomeType.Forest;
-
-    private float _nextSpawnZ;
+    // 次にチャンクを生成するZ座標（初期値設定0f）
+    private float _nextSpawnZ = 0f;
+    // 生成されたチャンクとそのバイオームの情報を保持するキュー
+    private Queue<(GameObject obj, StageType biome)> _activeChunks = new();
     private void Start()
     {
         // 初期チャンクの生成
         for (int i = 0; i < _spawnCount; i++)
         {
-            SpawnChunk(CurrentBiome); // 最初は現在のバイオームからスタート
+            SpawnChunk(GameManager.Instance.CurrentStageType);
         }
     }
     private void Update()
@@ -30,7 +29,7 @@ public class ChunckSpawer : MonoBehaviour
         // プレイヤーが次のスポーンポイントに近づいたら新しいチャンクを生成
         while (_player.position.z + _spawnDistance > _nextSpawnZ)
         {
-            SpawnChunk(CurrentBiome);
+            SpawnChunk(GameManager.Instance.CurrentStageType);
         }
 
         //後ろのチャンクを回収
@@ -45,9 +44,11 @@ public class ChunckSpawer : MonoBehaviour
             else break;
         }
     }
-    // 生成されたチャンクとそのバイオームの情報を保持するキュー
-    private Queue<(GameObject obj, TestBiomeType biome)> _activeChunks = new();
-    private void SpawnChunk(TestBiomeType biome)
+    /// <summary>
+    /// 指定したバイオームを生成
+    /// </summary>
+    /// <param name="biome">生成するバイオームの種類</param>
+    private void SpawnChunk(StageType biome)
     {
         var chunk = _chunkPool.GetChunk(biome);
         if (chunk == null) return;
