@@ -4,7 +4,7 @@ using UnityEngine;
 public class TrainMove : MonoBehaviour
 {
     [SerializeField] private FireBox _fireBox;
-    [SerializeField] private float _moveSpeed = 1f;
+    [SerializeField] private float _moveSpeed = 5f;
 
     private Rigidbody _rb;
 
@@ -19,6 +19,6 @@ public class TrainMove : MonoBehaviour
     }
     private void Move()
     {
-        _rb.linearVelocity = Vector3.forward * _moveSpeed * _fireBox.CurrntFire * Time.deltaTime;
+        _rb.linearVelocity = Vector3.forward * _moveSpeed * _fireBox.CurrntFire;
     }
 }
