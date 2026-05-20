@@ -1,16 +1,15 @@
 using UnityEngine;
 
-public class FireMater : MonoBehaviour
+public class FireMeter : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [Header("-----éQè∆-----")]
+    [SerializeField] private RectTransform _needle;
 
-    // Update is called once per frame
-    void Update()
+    public void ChangeMeter(float value)
     {
-        
+        value = Mathf.Clamp(value, 0f, 100f);
+        float angle = Mathf.Lerp(0f, -180f, value / 100f);
+
+        _needle.rotation = Quaternion.Euler(0f, 0f, angle);
     }
 }
