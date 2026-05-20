@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     [Header("-----”’lİ’è-----")]
     [SerializeField] private float _decreaseFire = -0.2f;
 
+    private bool _isDisplay = false;
+
     private void Awake()
     {
         Instance = this;
@@ -39,7 +41,16 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            if (_isDisplay) return;
 
+
+
+            _isDisplay = true;
+        }
+
+        if(_fireBox.CurrntFire <= 0 || _fireBox.CurrntFire >= 100)
+        {
+            IsDead = true;
         }
     }
 
