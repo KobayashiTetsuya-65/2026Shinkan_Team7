@@ -20,6 +20,7 @@ public class WhistleGauge : MonoBehaviour
     public void AddSteam(float delta,bool isWhistle)
     {
         float multiplier = 1f;
+        if(_gameManager == null) _gameManager = GameManager.Instance;
         _temperature = _gameManager.FireBox.CurrntFire;
 
         if (!isWhistle)
