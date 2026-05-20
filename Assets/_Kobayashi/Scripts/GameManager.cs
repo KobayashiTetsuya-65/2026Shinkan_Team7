@@ -14,6 +14,13 @@ public enum DeathType
     Explosion,
     Dassen
 }
+
+public enum MissionType
+{
+    Wood,
+    Stone,
+    Bridge
+}
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
