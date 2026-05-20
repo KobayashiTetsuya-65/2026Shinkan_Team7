@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdfb15d006826894a90e82614bd0a49a, type: 3}
-  m_Name: Desert
+  m_Script: {fileID: 11500000, guid: 11617c068dfba5547bd3c7a44a7741d0, type: 3}
+  m_Name: OverHeat
   m_EditorClassIdentifier: 
-  biomeType: 1
-  stagePrefab: {fileID: 707574066066426407, guid: bc73b69cc0a051a4ca264ccffb564d15, type: 3}
-  chunkLength: 30
+  _deathType: 0
+  _sprite: {fileID: 21300000, guid: a9f3b78e4ce832e44bbff909e7ecc0d6, type: 3}

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdfb15d006826894a90e82614bd0a49a, type: 3}
-  m_Name: Desert
+  m_Script: {fileID: 11500000, guid: 2a8297e7570d42c4a816a50bb5bdf658, type: 3}
+  m_Name: ResultDataBase
   m_EditorClassIdentifier: 
-  biomeType: 1
-  stagePrefab: {fileID: 707574066066426407, guid: bc73b69cc0a051a4ca264ccffb564d15, type: 3}
-  chunkLength: 30
+  _resultDatas:
+  - {fileID: 11400000, guid: 2b79e7c770585c04e9b7d0a4cebb93bb, type: 2}
+  - {fileID: 11400000, guid: 12ba59ff0a6bb6e47a60b291f3844886, type: 2}
