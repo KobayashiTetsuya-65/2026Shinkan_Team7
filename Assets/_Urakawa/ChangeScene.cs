@@ -1,23 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class scene1 : MonoBehaviour
+public class ChangeScene : MonoBehaviour
 {
-    [SerializeField] private string _sceneName;
-    public void Change_button()
+    public void SceneLoad(string sceneName)
     {
-        SceneManager.LoadScene(_sceneName);
+        SceneManager.LoadScene(sceneName);
     }
-    private static scene1 instance;
-    public static scene1 Instance
+    private static ChangeScene instance;
+    public static ChangeScene Instance
     {
         get
         {
             if (instance == null)
             {
                 GameObject singletonObject = new GameObject("scene1");
-                instance = singletonObject.AddComponent<scene1>();
+                instance = singletonObject.AddComponent<ChangeScene>();
                 DontDestroyOnLoad(singletonObject);
             }
             return instance;

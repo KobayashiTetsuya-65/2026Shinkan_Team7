@@ -446,7 +446,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1013772793}
-  - component: {fileID: 1013772792}
+  - component: {fileID: 1013772795}
+  - component: {fileID: 1013772794}
   m_Layer: 0
   m_Name: SceneManger
   m_TagString: Untagged
@@ -454,19 +455,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1013772792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013772791}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 806c02920ebfe1342ac650ad75ee75db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sceneName: Urakawa_Test2
 --- !u!4 &1013772793
 Transform:
   m_ObjectHideFlags: 0
@@ -483,6 +471,31 @@ Transform:
   - {fileID: 1466614146}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1013772794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013772791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806c02920ebfe1342ac650ad75ee75db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1013772795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013772791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 386966c14e3354f41be3112da7e75a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: Urakawa_Test2
 --- !u!1 &1100332037
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,8 +579,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1013772792}
-        m_TargetAssemblyTypeName: scene1, Assembly-CSharp
+      - m_Target: {fileID: 1013772795}
+        m_TargetAssemblyTypeName: GetComponentCaller, Assembly-CSharp
         m_MethodName: Change_button
         m_Mode: 1
         m_Arguments:
