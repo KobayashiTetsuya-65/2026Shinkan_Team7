@@ -1,0 +1,53 @@
+using DG.Tweening;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class WhistleRope : MonoBehaviour,IBeginDragHandler, IDragHandler,IEndDragHandler
+{
+    [SerializeField] private WhistleGauge _gauge;
+    [Header("-----数値設定-----")]
+    [SerializeField, Header("始点の高さ")] private float _startY;
+    [SerializeField, Header("終点の高さ")] private float _finishY;
+    [SerializeField, Header("演出時間")] private float _duration = 0.3f;
+
+    private GameManager _gameManager;
+    private RectTransform _rt;
+    private Tween _moveTween;
+    void Start()
+    {
+        _gameManager = GameManager.Instance;
+        _rt = GetComponent<RectTransform>();
+    }
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        Debug.Log("汽笛！！！！！！！！！！！！");
+        if (_gauge.IsFull)
+        {
+            _moveTween?.Kill();
+
+            _moveTween = _rt.DOAnchorPosY(_finishY, _duration)
+                .SetEase(Ease.Linear);
+
+            _gameManager.ChangeWhistleState(true);
+            _gameManager.FireBox.SetFire(99);
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        
+    }
+
+    public void FinishWhistle()
+    {
+        _moveTween?.Kill();
+
+        _moveTween = _rt.DOAnchorPosY(_startY, _duration)
+            .SetEase(Ease.Linear);
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        
+    }
+}
