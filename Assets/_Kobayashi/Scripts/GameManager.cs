@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour
         if (_fireBox.CurrntFire <= 1)
         {
             _deathType = DeathType.Stop;
+            _deathTime = 0.5f;
             IsDead = true;
         }
         else if (_fireBox.CurrntFire >= 100)
