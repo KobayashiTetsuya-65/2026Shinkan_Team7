@@ -119,6 +119,96 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &196241594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 196241595}
+  - component: {fileID: 196241598}
+  - component: {fileID: 196241597}
+  - component: {fileID: 196241596}
+  m_Layer: 5
+  m_Name: baketu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &196241595
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196241594}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1077885615}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -745, y: -376}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &196241596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196241594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e90faa5cb645e4388cf16f8b1aeed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 8360865089150435543, guid: b28ab8c4ccf154249b0f11aac62106d6, type: 3}
+  _defaultCount: 10
+--- !u!114 &196241597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196241594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &196241598
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196241594}
+  m_CullTransparentMesh: 1
 --- !u!1 &527455594
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,8 +379,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _player: {fileID: 1215728853}
   _chunkPool: {fileID: 627817076}
-  _spawnCount: 10
-  _spawnDistance: 50
+  _spawnCount: 15
+  _spawnDistance: 280
 --- !u!4 &627817075
 Transform:
   m_ObjectHideFlags: 0
@@ -658,6 +748,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 197944, guid: c9fa32fdb1f2f874b93d486a8a590411, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2019469784}
+    - targetCorrespondingSourceObject: {fileID: 197944, guid: c9fa32fdb1f2f874b93d486a8a590411, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2019469785}
   m_SourcePrefab: {fileID: 100100000, guid: c9fa32fdb1f2f874b93d486a8a590411, type: 3}
 --- !u!1 &879838218
 GameObject:
@@ -1090,6 +1183,7 @@ RectTransform:
   - {fileID: 1739901021}
   - {fileID: 934008710}
   - {fileID: 1830727761}
+  - {fileID: 196241595}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1143,9 +1237,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f4852da9d2f2649b22b92241ff31e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FuelObjectPool: {fileID: 0}
-  Canvas: {fileID: 0}
-  _fireBox: {fileID: 0}
+  FuelObjectPool: {fileID: 196241596}
+  Canvas: {fileID: 1077885614}
+  _fireBox: {fileID: 2019469784}
   _decreaseFire: -0.2
 --- !u!4 &1647551652
 Transform:
@@ -1397,6 +1491,20 @@ MonoBehaviour:
   _dezartDecreaseMag: 0.8
   _wetlandDecreaseMag: 1.3
   _wastelandDecreaseMag: 1
+--- !u!114 &2019469785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019469781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3992f2d5888a6e24faf75005bf19e4ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireBox: {fileID: 2019469784}
+  _moveSpeed: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
