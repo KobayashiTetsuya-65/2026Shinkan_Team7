@@ -11,14 +11,18 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public StageType CurrentStageType { get; private set; }
-    public bool IsDead { get; private set; }
+    public bool IsDead { get; private set; } = false;
 
     [SerializeField] public FuelObjectPool FuelObjectPool;
     [SerializeField] public Canvas Canvas;
+    [SerializeField] private FireBox _fireBox;
+    [Header("-----êîílê›íË-----")]
+    [SerializeField] private float _decreaseFire = -0.2f;
 
     private void Awake()
     {
         Instance = this;
+        Application.targetFrameRate = 120;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -26,13 +30,12 @@ public class GameManager : MonoBehaviour
         CurrentStageType = StageType.Normal;
         IsDead = false;
     }
-
     // Update is called once per frame
     void Update()
     {
         if (!IsDead)
         {
-
+            _fireBox.DecreaseFire(_decreaseFire);
         }
         else
         {
