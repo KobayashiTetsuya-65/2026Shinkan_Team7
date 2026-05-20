@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
-using static TestEnum;
 public class ChunkPool : MonoBehaviour
 {
     [SerializeField] private StageConfig[] _stageConfigs;
 
-    private Dictionary<TestBiomeType, ObjectPool<GameObject>> _chunkPool = new();
+    private Dictionary<StageType, ObjectPool<GameObject>> _chunkPool = new();
 
     private void Awake()
     {
         foreach (var config in _stageConfigs)
         {
+            var loalConfig = config; 
             var pool = new ObjectPool<GameObject>(
-                createFunc: () => Instantiate(config.stagePrefab),
+                createFunc: () => Instantiate(loalConfig.stagePrefab),
                 actionOnGet: obj => obj.SetActive(true),
                 actionOnRelease: obj => obj.SetActive(false),
                 actionOnDestroy: obj => Destroy(obj),
@@ -22,7 +22,7 @@ public class ChunkPool : MonoBehaviour
             _chunkPool[config.biomeType] = pool;
         }
     }
-    public GameObject GetChunk(TestBiomeType biome)
+    public GameObject GetChunk(StageType biome)
     {
         if (_chunkPool.TryGetValue(biome, out var pool))
         {
@@ -32,7 +32,7 @@ public class ChunkPool : MonoBehaviour
         return null;
     }
     /// <summary>通常チャンクを取得</summary>
-    public void ReleaseChunk(TestBiomeType biome, GameObject chunk)
+    public void ReleaseChunk(StageType biome, GameObject chunk)
     {
         if (_chunkPool.TryGetValue(biome, out var pool))
         {
@@ -43,5 +43,12 @@ public class ChunkPool : MonoBehaviour
             Debug.LogWarning($"Biome type {biome} のチャンクプールが見つかりませんでした。");
             Destroy(chunk);
         }
+    }
+    /// <summary>チャンクの長さを取得</summary>
+    public float GetChunkLength(StageType biome)
+    {
+        foreach (var config in _stageConfigs)
+            if (config.biomeType == biome) return config.chunkLength;
+        return 0f;
     }
 }
