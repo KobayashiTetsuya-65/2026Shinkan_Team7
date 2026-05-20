@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdfb15d006826894a90e82614bd0a49a, type: 3}
-  m_Name: StageConfig
+  m_Name: Nomal
   m_EditorClassIdentifier: 
   biomeType: 0
   stagePrefab: {fileID: 3057263023221969389, guid: b59bf124e1c45a243b104a084f06f9b2, type: 3}
-  chunkLength: 20
+  chunkLength: 5
