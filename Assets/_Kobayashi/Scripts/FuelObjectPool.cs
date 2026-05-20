@@ -21,7 +21,7 @@ public class FuelObjectPool : MonoBehaviour
 
     private GameObject CreateObject()
     {
-        GameObject obj = Instantiate(_prefab, transform);
+        GameObject obj = Instantiate(_prefab, _gameManager.Canvas.transform);
         obj.SetActive(false);
 
         _pool.Enqueue(obj);
