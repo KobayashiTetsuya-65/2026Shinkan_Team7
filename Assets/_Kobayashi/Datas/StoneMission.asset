@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5812c9dc8c97662478319cffc54b1378, type: 3}
-  m_Name: WoodMission
+  m_Name: StoneMission
   m_EditorClassIdentifier: 
-  _missionType: 0
-  _missionName: "\u6728\u304C\u3042\u308B\u3088\uFF01\uFF01\uFF01"
-  _prefab: {fileID: 0}
-  _fowerdMeter: 0
+  _missionType: 1
+  _missionName: "100m\u5148\u306B\u77F3\u304C\u51FA\u305F\u3088\uFF01\n\u30E1\u30FC\u30BF\u30FC\u309280\u307E\u3067\u4E0A\u3052\u3088\u3046\uFF01"
+  _prefab: {fileID: 7835623493489872216, guid: 814ed5f6080526c458c13109b4063be9, type: 3}
+  _fowerdMeter: 1000
