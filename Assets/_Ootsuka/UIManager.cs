@@ -2,10 +2,17 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public GameObject panel;
+    public GameObject _panel;
+
 
     public void Open()
     {
-        panel.SetActive(true);
+        _panel.SetActive(true);
     }
+
+    public void CloseMenu()
+    {
+        _panel.SetActive(false);
+    }
+
 }
