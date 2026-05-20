@@ -12,7 +12,7 @@ public enum BGMType
     Title,
     Nomal,
     Bonus,
-    GameOver
+    Result
 }
 [System.Serializable]
 public class SEData
@@ -59,7 +59,7 @@ public class SoundManager : MonoBehaviour
         // シーンをまたいでも消えないようにする
         DontDestroyOnLoad(gameObject);
 
-        _seDictionary = new Dictionary<SEType, (AudioClip clip,float volume)>();
+        _seDictionary = new Dictionary<SEType, (AudioClip clip, float volume)>();
         _bgmDictionary = new Dictionary<BGMType, (AudioClip clip, float volume)>();
 
         foreach (SEData data in SeList)
@@ -121,7 +121,23 @@ public class SoundManager : MonoBehaviour
             Debug.LogWarning($"{type}が登録されていません！");
             return;
         }
+        // 新しくAudioSourceを作る
+        AudioSource seSource = gameObject.AddComponent<AudioSource>();
+
+        // 辞書から再生する音をセットする
         var (clip, volume) = _seDictionary[type];
-        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, volume);
+
+        seSource.clip = clip;
+        // 音量をセット
+        seSource.volume = volume;
+
+        // ループしない
+        seSource.loop = false;
+
+        // 再生
+        seSource.Play();
+
+        // 再生が終わったら削除
+        Destroy(seSource, seSource.clip.length);
     }
 }

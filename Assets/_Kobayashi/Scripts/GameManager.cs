@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         CurrentStageType = StageType.Normal;
         IsDead = false;
         _scoreManager = FindAnyObjectByType<ScoreViewManager>();
+        SoundManager.Instance.PlayBGM(BGMType.Nomal);
     }
     // Update is called once per frame
     void Update()
@@ -72,7 +73,7 @@ public class GameManager : MonoBehaviour
                 _missionTimer += Time.deltaTime;
             ScoreUpdate();
 
-            if (!_whistleGauge.IsFull && !IsWhistle)
+            if (!IsWhistle)
             {
                 _whistleGauge.AddSteam(_addspeed, false);
                 _fireBox.DecreaseFire(_decreaseFire);
@@ -98,6 +99,7 @@ public class GameManager : MonoBehaviour
         else
         {
             if (_isDisplay) return;
+            SoundManager.Instance.PlayBGM(BGMType.Result);
 
             _scoreManager.DisplayResult(_deathType);
 

@@ -758,7 +758,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 450af0361ba9bff4cbc23dcfa02ad9c3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -867,6 +867,9 @@ MonoBehaviour:
     volume: 0.5
   - type: 2
     clip: {fileID: 8300000, guid: 70038decc6fc383428d8aa9cf2460591, type: 3}
+    volume: 1
+  - type: 3
+    clip: {fileID: 8300000, guid: 1e8f9783478422c4eaf6e5c3088744d2, type: 3}
     volume: 1
 --- !u!4 &765083024
 Transform:
