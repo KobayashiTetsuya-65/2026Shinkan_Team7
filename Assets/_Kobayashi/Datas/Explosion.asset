@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5812c9dc8c97662478319cffc54b1378, type: 3}
-  m_Name: WoodMission
+  m_Script: {fileID: 11500000, guid: 11617c068dfba5547bd3c7a44a7741d0, type: 3}
+  m_Name: Explosion
   m_EditorClassIdentifier: 
-  _missionType: 0
-  _missionName: "\u6728\u304C\u3042\u308B\u3088\uFF01\uFF01\uFF01"
-  _prefab: {fileID: 0}
-  _fowerdMeter: 0
+  _deathType: 2
+  _sprite: {fileID: 21300000, guid: 4057e860a766f534daa2ed2b902d5a98, type: 3}
