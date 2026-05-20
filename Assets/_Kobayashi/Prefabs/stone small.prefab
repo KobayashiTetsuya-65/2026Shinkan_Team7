@@ -120,3 +120,4 @@ MonoBehaviour:
   _deathType: 2
   _isUpper: 1
   _correctValue: 80
+  _particle: {fileID: 8218216832530016474, guid: 9b2f6ed60f44b004aaf540699f57cbf2, type: 3}
