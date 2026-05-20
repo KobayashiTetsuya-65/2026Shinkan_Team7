@@ -37,6 +37,7 @@ public class WhistleGauge : MonoBehaviour
         }
 
 
+
         whistle += delta * multiplier;
 
         whistle = Mathf.Clamp01(whistle);
