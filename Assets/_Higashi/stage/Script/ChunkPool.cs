@@ -22,4 +22,26 @@ public class ChunkPool : MonoBehaviour
             _chunkPool[config.biomeType] = pool;
         }
     }
+    public GameObject GetChunk(TestBiomeType biome)
+    {
+        if (_chunkPool.TryGetValue(biome, out var pool))
+        {
+            return pool.Get();
+        }
+        Debug.LogWarning($"Biome type {biome} のチャンクプールが見つかりませんでした。");
+        return null;
+    }
+    /// <summary>通常チャンクを取得</summary>
+    public void ReleaseChunk(TestBiomeType biome, GameObject chunk)
+    {
+        if (_chunkPool.TryGetValue(biome, out var pool))
+        {
+            pool.Release(chunk);
+        }
+        else
+        {
+            Debug.LogWarning($"Biome type {biome} のチャンクプールが見つかりませんでした。");
+            Destroy(chunk);
+        }
+    }
 }
