@@ -2,5 +2,5 @@ using UnityEngine;
 
 public class TrainMove : MonoBehaviour
 {
-    [SerializeField] private float
+   // [SerializeField] private float
 }
