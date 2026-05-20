@@ -19,6 +19,7 @@ public class SEData
 {
     public SEType type;      // SEの種類
     public AudioClip clip;   // 音データ
+    [SerializeField, Range(0, 1)]
     public float volume = 1f;    // 音量（0.0f〜1.0f）
 }
 [System.Serializable]
@@ -26,6 +27,7 @@ public class BGMData
 {
     public BGMType type;      // BGMの種類
     public AudioClip clip;   // 音データ
+    [SerializeField, Range(0, 1)]
     public float volume = 1f;    // 音量（0.0f〜1.0f）
 }
 public class SoundManager : MonoBehaviour
@@ -40,8 +42,8 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private List<SEData> SeList = new List<SEData>();
     [SerializeField] private List<BGMData> BgmList = new List<BGMData>();
 
-    private Dictionary<SEType, AudioClip> _seDictionary;
-    private Dictionary<BGMType, AudioClip> _bgmDictionary;
+    private Dictionary<SEType, (AudioClip clip, float volume)> _seDictionary;
+    private Dictionary<BGMType, (AudioClip clip, float volume)> _bgmDictionary;
     void Awake()
     {
         //一つだけ
@@ -57,12 +59,16 @@ public class SoundManager : MonoBehaviour
         // シーンをまたいでも消えないようにする
         DontDestroyOnLoad(gameObject);
 
-        _seDictionary = new Dictionary<SEType, AudioClip>();
-        _bgmDictionary = new Dictionary<BGMType, AudioClip>();
+        _seDictionary = new Dictionary<SEType, (AudioClip clip,float volume)>();
+        _bgmDictionary = new Dictionary<BGMType, (AudioClip clip, float volume)>();
 
         foreach (SEData data in SeList)
         {
-            _seDictionary[data.type] = data.clip;
+            _seDictionary[data.type] = (data.clip, data.volume);
+        }
+        foreach (BGMData data in BgmList)
+        {
+            _bgmDictionary[data.type] = (data.clip, data.volume);
         }
 
 
@@ -73,11 +79,20 @@ public class SoundManager : MonoBehaviour
     /// BGMを再生するメソッド
     /// </summary>
     /// <param name="clip"></param>
-    public void PlayBGM(AudioClip clip)
+    public void PlayBGM(BGMType type)
     {
+        if (!_bgmDictionary.ContainsKey(type))
+        {
+            Debug.LogWarning($"{type}が登録されていません！");
+            return;
+        }
+
+        var (clip, volume) = _bgmDictionary[type];
+
         // もし同じ曲が流れていたら戻す
         if (_bgmSource.clip == clip) return;
-
+        // 音量をセット
+        _bgmSource.volume = volume;
         // 曲をセット
         _bgmSource.clip = clip;
 
@@ -106,6 +121,7 @@ public class SoundManager : MonoBehaviour
             Debug.LogWarning($"{type}が登録されていません！");
             return;
         }
-        AudioSource.PlayClipAtPoint(_seDictionary[type], Camera.main.transform.position);
+        var (clip, volume) = _seDictionary[type];
+        AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, volume);
     }
 }

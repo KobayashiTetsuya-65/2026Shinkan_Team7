@@ -860,13 +860,17 @@ MonoBehaviour:
   SeList:
   - type: 0
     clip: {fileID: 8300000, guid: 76d761e81e084484382292904409e4d9, type: 3}
+    volume: 1
   - type: 3
     clip: {fileID: 8300000, guid: 09352d8378cc6694c8c3356150927a7a, type: 3}
+    volume: 1
   BgmList:
   - type: 1
     clip: {fileID: 8300000, guid: 450af0361ba9bff4cbc23dcfa02ad9c3, type: 3}
+    volume: 1
   - type: 2
     clip: {fileID: 8300000, guid: 70038decc6fc383428d8aa9cf2460591, type: 3}
+    volume: 1
 --- !u!1001 &1140526409
 PrefabInstance:
   m_ObjectHideFlags: 0
