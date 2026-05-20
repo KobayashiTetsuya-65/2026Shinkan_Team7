@@ -3,30 +3,31 @@ using UnityEngine.UI;
 
 public class WhistleGauge : MonoBehaviour
 {
+    public bool IsFull { get; private set; } = false;
+    public float CurrentSteam => _currentSteam;
     public Image whistleBar;
 
-    public float whistle = 0f;
+    private float _temperature;
+    private GameManager _gameManager;
+    private float _currentSteam = 0f;
 
-    public float addspeed = 0.01f;
-
-    public float temperature = 80f;
-
-    void Update()
+    private void Start()
     {
-        AddSteam(addspeed,false);
+        _gameManager = GameManager.Instance;
     }
 
     public void AddSteam(float delta,bool isWhistle)
     {
         float multiplier = 1f;
+        _temperature = _gameManager.FireBox.CurrntFire;
 
         if (!isWhistle)
         {
-            if (temperature >= 80)
+            if (_temperature >= 80)
             {
                 multiplier = 1f;
             }
-            else if (temperature >= 60)
+            else if (_temperature >= 60)
             {
                 multiplier = 0.5f;
             }
@@ -38,10 +39,19 @@ public class WhistleGauge : MonoBehaviour
 
 
 
-        whistle += delta * multiplier;
+        _currentSteam += delta * multiplier;
 
-        whistle = Mathf.Clamp01(whistle);
+        _currentSteam = Mathf.Clamp01(_currentSteam);
 
-        whistleBar.fillAmount = whistle;
+        whistleBar.fillAmount = _currentSteam;
+        if (_currentSteam >= 1)
+        {
+            IsFull = true;
+        }
+        else if(_currentSteam <= 0)
+        {
+            IsFull = false;
+            _gameManager.ChangeWhistleState(false);
+        }
     }
 }
