@@ -183,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stageConfigs:
   - {fileID: 11400000, guid: 9b384b43920f2004894b55841969560f, type: 2}
+  - {fileID: 11400000, guid: 7f6e29ac98ca5764e9cb74c3893c7ff1, type: 2}
 --- !u!1 &683123898
 GameObject:
   m_ObjectHideFlags: 0

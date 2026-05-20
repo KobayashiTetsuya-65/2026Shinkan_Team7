@@ -11,8 +11,9 @@ public class ChunkPool : MonoBehaviour
     {
         foreach (var config in _stageConfigs)
         {
+            var loalConfig = config; 
             var pool = new ObjectPool<GameObject>(
-                createFunc: () => Instantiate(config.stagePrefab),
+                createFunc: () => Instantiate(loalConfig.stagePrefab),
                 actionOnGet: obj => obj.SetActive(true),
                 actionOnRelease: obj => obj.SetActive(false),
                 actionOnDestroy: obj => Destroy(obj),
@@ -42,5 +43,12 @@ public class ChunkPool : MonoBehaviour
             Debug.LogWarning($"Biome type {biome} のチャンクプールが見つかりませんでした。");
             Destroy(chunk);
         }
+    }
+    /// <summary>チャンクの長さを取得</summary>
+    public float GetChunkLength(StageType biome)
+    {
+        foreach (var config in _stageConfigs)
+            if (config.biomeType == biome) return config.chunkLength;
+        return 0f;
     }
 }

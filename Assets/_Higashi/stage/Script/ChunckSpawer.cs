@@ -5,7 +5,6 @@ public class ChunckSpawer : MonoBehaviour
 {
     [Header("Ý’è")]
     [SerializeField] private Transform _player;
-    [SerializeField] private float _chunkLength = 5f;
     [SerializeField] private ChunkPool _chunkPool;
     // ¶¬‚·‚éƒ`ƒƒƒ“ƒN‚Ì”
     [SerializeField] private int _spawnCount = 5;
@@ -36,7 +35,7 @@ public class ChunckSpawer : MonoBehaviour
         while (_activeChunks.Count > 0)
         {
             var (obj, biome) = _activeChunks.Peek();
-            if (obj.transform.position.z + _chunkLength < _player.position.z - _spawnDistance)
+            if (obj.transform.position.z + _chunkPool.GetChunkLength(biome) < _player.position.z - _spawnDistance)
             {
                 _chunkPool.ReleaseChunk(biome, obj);
                 _activeChunks.Dequeue();
@@ -53,7 +52,8 @@ public class ChunckSpawer : MonoBehaviour
         var chunk = _chunkPool.GetChunk(biome);
         if (chunk == null) return;
         chunk.transform.position = new Vector3(0, 0, _nextSpawnZ);
-        _nextSpawnZ += _chunkLength;
+        var chankLength = _chunkPool.GetChunkLength(biome);
+        _nextSpawnZ += chankLength;
         _activeChunks.Enqueue((chunk, biome));
     }
 }

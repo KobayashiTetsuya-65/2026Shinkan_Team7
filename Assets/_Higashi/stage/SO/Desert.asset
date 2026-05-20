@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   biomeType: 1
   stagePrefab: {fileID: 707574066066426407, guid: bc73b69cc0a051a4ca264ccffb564d15, type: 3}
-  chunkLength: 20
+  chunkLength: 5
