@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class FuelBucket : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandler
+public class FuelBucket : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandler,IPointerClickHandler
 {
     private GameManager _gameManager;
     private Fuel _currentFuel;
@@ -13,7 +13,6 @@ public class FuelBucket : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDra
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("aa");
         GameObject fuelObj =
            _gameManager.FuelObjectPool.GetObject();
 
@@ -31,5 +30,10 @@ public class FuelBucket : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDra
         _currentFuel?.EndDrag(eventData);
 
         _currentFuel = null;
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        
     }
 }

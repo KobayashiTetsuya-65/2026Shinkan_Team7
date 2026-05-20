@@ -34,7 +34,6 @@ public class Fuel : MonoBehaviour
     {
         _rt.anchoredPosition +=
             eventData.delta / _canvas.scaleFactor;
-        Debug.Log("ˆÚ“®’†");
     }
     public void EndDrag(PointerEventData eventData)
     {
@@ -47,7 +46,7 @@ public class Fuel : MonoBehaviour
         }
         else
         {
-
+            Debug.Log("‚Ý‚·");
         }
         _gameManager.FuelObjectPool.ReturnObject(gameObject);
     }
