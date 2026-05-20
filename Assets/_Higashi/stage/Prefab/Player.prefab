@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fireBox: {fileID: 0}
-  _moveSpeed: 5
+  _moveSpeed: 4
 --- !u!33 &2530529659470091069
 MeshFilter:
   m_ObjectHideFlags: 0
