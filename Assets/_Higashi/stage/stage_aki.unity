@@ -755,7 +755,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 449624, guid: c9fa32fdb1f2f874b93d486a8a590411, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 449624, guid: c9fa32fdb1f2f874b93d486a8a590411, type: 3}
       propertyPath: m_LocalPosition.z
@@ -801,14 +801,14 @@ PrefabInstance:
       addedObject: {fileID: 683123901}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 197944, guid: c9fa32fdb1f2f874b93d486a8a590411, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 2040177203}
+    - targetCorrespondingSourceObject: {fileID: 197944, guid: c9fa32fdb1f2f874b93d486a8a590411, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2040177205}
     - targetCorrespondingSourceObject: {fileID: 197944, guid: c9fa32fdb1f2f874b93d486a8a590411, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2040177204}
-    - targetCorrespondingSourceObject: {fileID: 197944, guid: c9fa32fdb1f2f874b93d486a8a590411, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2040177203}
   m_SourcePrefab: {fileID: 100100000, guid: c9fa32fdb1f2f874b93d486a8a590411, type: 3}
 --- !u!1 &879838218
 GameObject:
@@ -1555,7 +1555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fireBox: {fileID: 668686296}
-  _moveSpeed: 1
+  _moveSpeed: 100
 --- !u!54 &2040177204
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1564,9 +1564,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040177202}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.01
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1581,7 +1581,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &2040177205
 BoxCollider:

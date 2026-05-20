@@ -13,12 +13,12 @@ public class TrainMove : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         Move();
     }
     private void Move()
     {
-        _rb.linearVelocity = Vector3.down * _moveSpeed * _fireBox.CurrntFire * Time.deltaTime;
+        _rb.linearVelocity = Vector3.forward * _moveSpeed * _fireBox.CurrntFire * Time.deltaTime;
     }
 }
