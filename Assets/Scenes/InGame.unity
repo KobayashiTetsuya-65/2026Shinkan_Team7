@@ -325,6 +325,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1958343886}
     - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
+      propertyPath: _decreaseSpeed
+      value: -0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
       propertyPath: _missionManager
       value: 
       objectReference: {fileID: 2107598280}
@@ -388,7 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -734,6 +738,7 @@ GameObject:
   - component: {fileID: 959580281}
   - component: {fileID: 959580283}
   - component: {fileID: 959580282}
+  - component: {fileID: 959580284}
   m_Layer: 5
   m_Name: Whistle
   m_TagString: Untagged
@@ -758,8 +763,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 194, y: 344}
-  m_SizeDelta: {x: 100, y: 572.5591}
+  m_AnchoredPosition: {x: 170, y: 395}
+  m_SizeDelta: {x: 100, y: 774.7416}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &959580282
 MonoBehaviour:
@@ -799,6 +804,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959580280}
   m_CullTransparentMesh: 1
+--- !u!114 &959580284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 959580280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea205d76a063d847b1e387b20d68e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gauge: {fileID: 1958343886}
+  _startY: 400
+  _finishY: 150
+  _duration: 0.3
 --- !u!1 &1093978555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,6 +1493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   whistleBar: {fileID: 2030492454}
+  _rope: {fileID: 959580284}
 --- !u!1 &2030492452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,6 +1577,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1295989367}
     m_Modifications:
+    - target: {fileID: 1697389258185427727, guid: cb835c291f09f474387099d14a19b499, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3316330039317446556, guid: cb835c291f09f474387099d14a19b499, type: 3}
       propertyPath: m_Name
       value: InGameUI

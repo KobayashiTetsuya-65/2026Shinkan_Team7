@@ -71,11 +71,11 @@ public class GameManager : MonoBehaviour
             if(!_isMission)
                 _missionTimer += Time.deltaTime;
             ScoreUpdate();
-            _fireBox.DecreaseFire(_decreaseFire);
 
             if (!_whistleGauge.IsFull && !IsWhistle)
             {
                 _whistleGauge.AddSteam(_addspeed, false);
+                _fireBox.DecreaseFire(_decreaseFire);
             }
             else if(IsWhistle)
             {

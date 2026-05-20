@@ -6,6 +6,7 @@ public class WhistleGauge : MonoBehaviour
     public bool IsFull { get; private set; } = false;
     public float CurrentSteam => _currentSteam;
     public Image whistleBar;
+    [SerializeField] private WhistleRope _rope;
 
     private float _temperature;
     private GameManager _gameManager;
@@ -50,8 +51,12 @@ public class WhistleGauge : MonoBehaviour
         }
         else if(_currentSteam <= 0)
         {
+            if (IsFull)
+            {
+                _gameManager.ChangeWhistleState(false);
+                _rope.FinishWhistle();
+            }
             IsFull = false;
-            _gameManager.ChangeWhistleState(false);
         }
     }
 }
