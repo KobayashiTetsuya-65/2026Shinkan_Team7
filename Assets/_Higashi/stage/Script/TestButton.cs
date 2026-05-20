@@ -6,4 +6,8 @@ public class TestButton : MonoBehaviour
     {
         GameManager.Instance.StageChange(StageType.Desert);
     }
+     public void OnClickNomal()
+    {
+        GameManager.Instance.StageChange(StageType.Normal);
+    }
 }
