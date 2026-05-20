@@ -33,14 +33,12 @@ public class FireBox : MonoBehaviour
     {
         CurrntFire = Mathf.Clamp(CurrntFire + (delta * DecreaseDeltaMag(_gameManager.CurrentStageType)),
             0, 100);
-        Debug.Log("Œ»İ‚Ì‰Î—Í = " + CurrntFire);
         _fireMeter.ChangeMeter(CurrntFire);
     }
     public void AddFire(float delta)
     {
         CurrntFire = Mathf.Clamp(CurrntFire + (delta*CurrentDeltaMag(_gameManager.CurrentStageType)),
             0, 110);
-        Debug.Log("Œ»İ‚Ì‰Î—Í = " + CurrntFire);
         _fireMeter.ChangeMeter(CurrntFire);
     }
 

@@ -27,18 +27,23 @@ public class GameManager : MonoBehaviour
     public StageType CurrentStageType { get; private set; }
     public bool IsDead { get; private set; } = false;
     public int Score { get; private set; } = 0;
+    public FireBox FireBox => _fireBox;
 
     [SerializeField] private GameObject _player;
     [SerializeField] public FuelObjectPool FuelObjectPool;
     [SerializeField] public Canvas Canvas;
     [SerializeField] private FireBox _fireBox;
+    [SerializeField] private MissionManager _missionManager;
 
     [Header("-----数値設定-----")]
-    [SerializeField] private float _decreaseFire = -0.2f;
+    [SerializeField,Header("火力の減少量")] private float _decreaseFire = -0.2f;
+    [SerializeField, Header("ステージ切り替え時間")] private float _stageChangeTime = 15f;
+    [SerializeField, Header("ミッション時間")] private float _missionTime = 10f;
 
-    private bool _isDisplay = false;
+    private bool _isDisplay = false,_isMission = false;
     private ScoreViewManager _scoreManager;
     private DeathType _deathType;
+    private float _stageTimer = 0,_missionTimer = 0;
 
 
     private void Awake()
@@ -58,8 +63,24 @@ public class GameManager : MonoBehaviour
     {
         if (!IsDead)
         {
+            _stageTimer += Time.deltaTime;
+            if(!_isMission)
+                _missionTimer += Time.deltaTime;
             ScoreUpdate();
             _fireBox.DecreaseFire(_decreaseFire);
+
+            if(_stageTimer >= _stageChangeTime)
+            {
+                _stageTimer = 0;
+                //ステージ切り替え
+            }
+
+            if(_missionTimer >= _missionTime)
+            {
+                _missionTimer = 0;
+                _missionManager.StartMission(MissionType.Stone);
+                _isMission = true;
+            }
         }
         else
         {
@@ -89,5 +110,17 @@ public class GameManager : MonoBehaviour
     public void StageChange(StageType nextStage)
     {
         CurrentStageType = nextStage;
+    }
+
+    public void FinishMission(bool isClear,DeathType deathType)
+    {
+        _isMission = false;
+   
+        if (!isClear)
+        {
+            IsDead = true;
+            _deathType = deathType;
+        }
+        _missionManager.EndMission();
     }
 }

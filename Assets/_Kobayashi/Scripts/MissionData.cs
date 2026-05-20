@@ -6,7 +6,7 @@ public class MissionData : ScriptableObject
     [SerializeField, Header("ミッションの種類")]
     private MissionType _missionType;
 
-    [SerializeField,Header("説明文")]
+    [SerializeField,Header("説明文"),TextArea(3,10)]
     private string _missionName;
 
     [SerializeField, Header("オブジェクト")]
