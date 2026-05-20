@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private MissionManager _missionManager;
     [SerializeField] private WhistleGauge _whistleGauge;
     [SerializeField] private TextMeshProUGUI _countText;
+    [SerializeField] private Transform _particleParent;
+    [SerializeField] private GameObject _particle;
 
     [Header("-----数値設定-----")]
     [SerializeField,Header("火力の減少量")] private float _decreaseFire = -0.2f;
@@ -47,11 +49,12 @@ public class GameManager : MonoBehaviour
     [SerializeField, Header("ミッション時間")] private float _missionTime = 10f;
     [SerializeField, Header("蒸気ゲージの上昇量")] private float _addspeed = 0.01f;
     [SerializeField, Header("蒸気ゲージの減少量")] private float _decreaseSpeed = -0.01f;
+    [SerializeField, Header("死亡後演出時間")] private float _deathTime = 2.0f;
 
     private bool _isDisplay = false,_isMission = false,_isCount = true;
     private ScoreViewManager _scoreManager;
     private DeathType _deathType;
-    private float _stageTimer = 0,_missionTimer = 0;
+    private float _stageTimer = 0,_missionTimer = 0,_deathTimer = 0;
 
 
     private void Awake()
@@ -109,14 +112,17 @@ public class GameManager : MonoBehaviour
         else
         {
             if (_isDisplay) return;
-            SoundManager.Instance.PlayBGM(BGMType.Result);
-
-            _scoreManager.DisplayResult(_deathType);
-
-            _isDisplay = true;
+            _deathTimer += Time.deltaTime;
+            if(_deathTimer >= _deathTime)
+            {
+                SoundManager.Instance.PlayBGM(BGMType.Result);
+                _scoreManager.DisplayResult(_deathType);
+                _deathTimer = 0;
+                _isDisplay = true;
+            }            
         }
 
-        if (_fireBox.CurrntFire <= 0)
+        if (_fireBox.CurrntFire <= 1)
         {
             _deathType = DeathType.Stop;
             IsDead = true;
@@ -124,6 +130,8 @@ public class GameManager : MonoBehaviour
         else if (_fireBox.CurrntFire >= 100)
         {
             _deathType = DeathType.OverHeat;
+            OverHeatDeadAnimation();
+            _fireBox.SetFire(2);
             IsDead = true;
         }
     }
@@ -136,7 +144,7 @@ public class GameManager : MonoBehaviour
     {
         CurrentStageType = nextStage;
     }
-
+  
     public void FinishMission(bool isClear,DeathType deathType)
     {
         _isMission = false;
@@ -154,6 +162,10 @@ public class GameManager : MonoBehaviour
         IsWhistle = toState;
     }
 
+    private void OverHeatDeadAnimation()
+    {
+        Instantiate(_particle, _particleParent);
+    }
     public void CountDownAnimation()
     {
         Sequence seq = DOTween.Sequence();
