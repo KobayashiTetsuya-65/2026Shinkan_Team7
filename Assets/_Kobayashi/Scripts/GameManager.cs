@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _countText;
     [SerializeField] private Transform _particleParent;
     [SerializeField] private GameObject _particle;
+    [SerializeField] private Transform _eventParticleParent;
+    [SerializeField] private GameObject _eventParticle;
 
     [Header("-----êîílê›íË-----")]
     [SerializeField,Header("âŒóÕÇÃå∏è≠ó ")] private float _decreaseFire = -0.2f;
@@ -154,6 +156,9 @@ public class GameManager : MonoBehaviour
         {
             IsDead = true;
             _deathType = deathType;
+            Instantiate(_eventParticle, _eventParticleParent);
+            _fireBox.SetFire(2);
+            _fireBox.SetFire(1.1f);
         }
         _missionManager.EndMission();
     }
@@ -166,6 +171,7 @@ public class GameManager : MonoBehaviour
     private void OverHeatDeadAnimation()
     {
         Instantiate(_particle, _particleParent);
+        _fireBox.SetFire(2);
     }
     public void CountDownAnimation()
     {
