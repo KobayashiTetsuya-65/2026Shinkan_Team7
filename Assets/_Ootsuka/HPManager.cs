@@ -54,6 +54,7 @@ public class WhistleGauge : MonoBehaviour
             if (IsFull)
             {
                 _gameManager.ChangeWhistleState(false);
+                SoundManager.Instance.PlayBGM(BGMType.Nomal);
                 _rope.FinishWhistle();
             }
             IsFull = false;

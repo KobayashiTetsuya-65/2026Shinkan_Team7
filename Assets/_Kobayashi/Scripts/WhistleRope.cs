@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class WhistleRope : MonoBehaviour,IBeginDragHandler, IDragHandler,IEndDragHandler
+public class WhistleRope : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField] private WhistleGauge _gauge;
     [Header("-----数値設定-----")]
@@ -20,7 +20,6 @@ public class WhistleRope : MonoBehaviour,IBeginDragHandler, IDragHandler,IEndDra
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("汽笛！！！！！！！！！！！！");
         if (_gauge.IsFull)
         {
             _moveTween?.Kill();
@@ -30,12 +29,15 @@ public class WhistleRope : MonoBehaviour,IBeginDragHandler, IDragHandler,IEndDra
 
             _gameManager.ChangeWhistleState(true);
             _gameManager.FireBox.SetFire(99);
+            Debug.Log("汽笛！！！！！！！！！！！！");
+            SoundManager.Instance.PlaySE(SEType.Whistle);
+            SoundManager.Instance.PlayBGM(BGMType.Bonus);
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        
+
     }
 
     public void FinishWhistle()
@@ -48,6 +50,6 @@ public class WhistleRope : MonoBehaviour,IBeginDragHandler, IDragHandler,IEndDra
 
     public void OnDrag(PointerEventData eventData)
     {
-        
+
     }
 }

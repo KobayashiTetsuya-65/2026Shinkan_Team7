@@ -32,6 +32,7 @@ public abstract class MissionObjectBase : MonoBehaviour,IObjectMission
                 CrearAnimation();
             else
             {
+                SoundManager.Instance.PlaySE(SEType.Explosion);
                 //Ž¸”s
             }
 
