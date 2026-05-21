@@ -86,7 +86,7 @@ public class FireBox : MonoBehaviour
         {
             StageType.Normal => _normalMag,
             StageType.Desert => _dezartMag,
-            StageType.Wetland => _wetlandMag,
+            StageType.Snow => _wetlandMag,
             StageType.Wasteland => _wastelandMag,
             _ => _normalMag
         };
@@ -97,7 +97,7 @@ public class FireBox : MonoBehaviour
         {
             StageType.Normal => _normalDecreaseMag,
             StageType.Desert => _dezartDecreaseMag,
-            StageType.Wetland => _wetlandDecreaseMag,
+            StageType.Snow => _wetlandDecreaseMag,
             StageType.Wasteland => _wastelandDecreaseMag,
             _ => _normalMag
         };
