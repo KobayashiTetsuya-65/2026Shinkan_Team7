@@ -19,6 +19,7 @@ public abstract class MissionObjectBase : MonoBehaviour,IObjectMission
     {
         if (other.CompareTag("Player"))
         {
+            if(_gameManager == null) _gameManager = GameManager.Instance;
             float value = _gameManager.FireBox.CurrntFire;
             if (_isUpper)
             {

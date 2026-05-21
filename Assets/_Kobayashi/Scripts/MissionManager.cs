@@ -26,7 +26,7 @@ public class MissionManager : MonoBehaviour
     {
         MissionData mission = _missionDatas.GetCardData(missionType);
         GameObject obj = Instantiate(mission.Prefab,
-            _player.transform.position + new Vector3(0f, 3f, mission.FowerdMeter),
+            _player.transform.position + new Vector3(0f, 1f, mission.FowerdMeter),
             Quaternion.identity);
 
         //UIâÊñ ë§Ç…ââèo
