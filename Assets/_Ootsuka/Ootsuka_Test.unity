@@ -497,8 +497,9 @@ GameObject:
   - component: {fileID: 231432006}
   - component: {fileID: 231432005}
   - component: {fileID: 231432004}
+  - component: {fileID: 231432007}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,7 +568,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 231432005}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 231432007}
+        m_TargetAssemblyTypeName: GetComponentCaller, Assembly-CSharp
+        m_MethodName: Change_button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &231432005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,6 +619,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231432002}
   m_CullTransparentMesh: 1
+--- !u!114 &231432007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231432002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 386966c14e3354f41be3112da7e75a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: Urakawa_Test2
 --- !u!1 &314225968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1202,50 @@ RectTransform:
   m_AnchoredPosition: {x: -1.7131786, y: 0.71}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &975261118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 975261120}
+  - component: {fileID: 975261119}
+  m_Layer: 0
+  m_Name: SceanManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &975261119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975261118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 806c02920ebfe1342ac650ad75ee75db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &975261120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975261118}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.9450014, y: 0.40999997, z: -1.7763898}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1231703577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,7 +1892,7 @@ GameObject:
   - component: {fileID: 1583635848}
   - component: {fileID: 1583635847}
   m_Layer: 5
-  m_Name: Button1
+  m_Name: CreditButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2410,3 +2480,4 @@ SceneRoots:
   - {fileID: 800901317}
   - {fileID: 657473935}
   - {fileID: 1231703579}
+  - {fileID: 975261120}

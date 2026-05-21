@@ -34,7 +34,6 @@ public class Fuel : MonoBehaviour
     {
         _rt.anchoredPosition +=
             eventData.delta / _canvas.scaleFactor;
-        Debug.Log("ˆÚ“®’†");
     }
     public void EndDrag(PointerEventData eventData)
     {
@@ -43,11 +42,11 @@ public class Fuel : MonoBehaviour
 
         if (target.TryGetComponent(out FireBox fireBox))
         {
-            fireBox.ChangeFire(_firePower);
+            fireBox.AddFire(_firePower);
         }
         else
         {
-
+            Debug.Log("‚Ý‚·");
         }
         _gameManager.FuelObjectPool.ReturnObject(gameObject);
     }

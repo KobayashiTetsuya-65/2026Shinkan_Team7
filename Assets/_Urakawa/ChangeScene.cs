@@ -2,6 +2,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class ChangeScene : MonoBehaviour
 {
+    /// <summary>
+    /// シーンの名前を読み込む
+    /// </summary>
+    /// <param name="sceneName">シーンの名前</param>
     public void SceneLoad(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
