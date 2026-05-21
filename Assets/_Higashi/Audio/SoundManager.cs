@@ -5,7 +5,9 @@ public enum SEType
     Whistle,
     Grab,
     Attack,
-    Explosion
+    Explosion,
+    Button,
+    InFule,
 }
 public enum BGMType
 {
