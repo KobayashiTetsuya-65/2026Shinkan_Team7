@@ -14,6 +14,7 @@ public class Fade : MonoBehaviour
 
     public void FadeOut()
     {
+        _canvasGroup.color = new Color(0f, 0f, 0f,0f);
         _canvasGroup.DOFade(1, _ChangeTime).OnComplete(() =>
         {
             ChangeScene.Instance.SceneLoad(_sceneName);
@@ -29,6 +30,7 @@ public class Fade : MonoBehaviour
 
     public void FadeIn()
     {
+        _canvasGroup.color = new Color(0f, 0f, 0f, 1f);
         _canvasGroup.DOFade(0, 2f);
     }
 
