@@ -656,6 +656,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2124718171551588754, guid: 8e9de3aa92097b54a9e0f22bf7866769, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5932442156787316540, guid: 8e9de3aa92097b54a9e0f22bf7866769, type: 3}
       propertyPath: m_Name
       value: SceneManger
