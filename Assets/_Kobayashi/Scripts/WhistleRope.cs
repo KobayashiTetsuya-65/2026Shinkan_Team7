@@ -20,7 +20,7 @@ public class WhistleRope : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (_gameManager.IsCount) return;
+        if (_gameManager.IsCount || _gameManager.IsDead) return;
 
         if (_gauge.IsFull)
         {
@@ -44,7 +44,7 @@ public class WhistleRope : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void FinishWhistle()
     {
-        if (_gameManager.IsCount) return;
+        if (_gameManager.IsCount || _gameManager.IsDead) return;
 
         _moveTween?.Kill();
 

@@ -13,7 +13,7 @@ public class FuelBucket : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDra
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if(_gameManager.IsCount) return;
+        if(_gameManager.IsCount || _gameManager.IsDead) return;
 
         GameObject fuelObj =
            _gameManager.FuelObjectPool.GetObject();
@@ -24,14 +24,14 @@ public class FuelBucket : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (_gameManager.IsCount) return;
+        if (_gameManager.IsCount || _gameManager.IsDead) return;
 
         _currentFuel?.Drag(eventData);
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (_gameManager.IsCount) return;
+        if (_gameManager.IsCount || _gameManager.IsDead) return;
 
         _currentFuel?.EndDrag(eventData);
 
