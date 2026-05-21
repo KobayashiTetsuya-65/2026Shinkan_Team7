@@ -123,8 +123,8 @@ MonoBehaviour:
   _deathType: 2
   _isUpper: 1
   _correctValue: 80
-  yPower: 5
-  zPower: 10
+  yPower: 20
+  zPower: 40
 --- !u!54 &-8092016976524073689
 Rigidbody:
   m_ObjectHideFlags: 0
