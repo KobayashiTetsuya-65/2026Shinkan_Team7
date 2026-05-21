@@ -1,27 +1,35 @@
-using UnityEngine;
-using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// フェードインフェードアウトする
 /// </summary>
 public class Fade : MonoBehaviour
 {
+    [SerializeField,Range(0f,10f)] private float _ChangeTime = 2f;
+    [SerializeField] private string _sceneName;
     public Image _canvasGroup;
 
     public void FadeOut()
     {
-        _canvasGroup.DOFade(1, 2f).OnComplete(Change_button);
+        _canvasGroup.DOFade(1, _ChangeTime).OnComplete(() =>
+        {
+            ChangeScene.Instance.SceneLoad(_sceneName);
+        });
 
     }
-    private void Start()
+    public void SceneChange()
     {
         FadeOut();
+        Invoke("FadeIn", _ChangeTime);
     }
-    [SerializeField] private string _sceneName;   
-    public void Change_button()
+      
+
+    public void FadeIn()
     {
-         ChangeScene.Instance.SceneLoad(_sceneName);
+        _canvasGroup.DOFade(0, 2f);
     }
-    
+
 }
