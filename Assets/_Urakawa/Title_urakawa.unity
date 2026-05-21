@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 20787987}
   - component: {fileID: 20787986}
   - component: {fileID: 20787985}
+  - component: {fileID: 20787989}
   m_Layer: 5
   m_Name: TitleCanvas
   m_TagString: Untagged
@@ -224,6 +225,19 @@ RectTransform:
   m_AnchoredPosition: {x: -1.7131786, y: 0.4}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &20787989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20787984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 386966c14e3354f41be3112da7e75a7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sceneName: InGame
 --- !u!1 &60246840
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,8 +297,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c255b09c66fd4f2408b5a9b880697593, type: 2}
+  m_sharedMaterial: {fileID: -6597436210922856713, guid: c255b09c66fd4f2408b5a9b880697593, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2876,7 +2890,6 @@ GameObject:
   - component: {fileID: 1167332297}
   - component: {fileID: 1167332296}
   - component: {fileID: 1167332295}
-  - component: {fileID: 1167332294}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -2904,18 +2917,6 @@ RectTransform:
   m_AnchoredPosition: {x: -2.32, y: 1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1167332294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1167332292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 386966c14e3354f41be3112da7e75a7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1167332295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2960,9 +2961,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1320805137}
-        m_TargetAssemblyTypeName: Fade, Assembly-CSharp
-        m_MethodName: SceneChange
+      - m_Target: {fileID: 20787989}
+        m_TargetAssemblyTypeName: GetComponentCaller, Assembly-CSharp
+        m_MethodName: SceneChange_button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3700,8 +3701,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Credit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c255b09c66fd4f2408b5a9b880697593, type: 2}
+  m_sharedMaterial: {fileID: -6597436210922856713, guid: c255b09c66fd4f2408b5a9b880697593, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3835,26 +3836,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneManger
       objectReference: {fileID: 0}
-    - target: {fileID: 7075212328669029297, guid: 8e9de3aa92097b54a9e0f22bf7866769, type: 3}
-      propertyPath: _sceneName
-      value: InGame
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e9de3aa92097b54a9e0f22bf7866769, type: 3}
---- !u!114 &1320805137 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7075212328669029297, guid: 8e9de3aa92097b54a9e0f22bf7866769, type: 3}
-  m_PrefabInstance: {fileID: 1320805136}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 154ac77c30f9e964aa021d443bbf3eaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1344564624
 PrefabInstance:
   m_ObjectHideFlags: 0

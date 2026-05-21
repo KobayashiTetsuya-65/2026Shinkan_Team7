@@ -1,7 +1,12 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class ChangeScene : MonoBehaviour
 {
+    [SerializeField, Range(0f, 10f)] private float _ChangeTime = 2f;
+    //[SerializeField] private string _sceneName;
+    public Image _canvasGroup;
     /// <summary>
     /// シーンの名前を読み込む
     /// </summary>
@@ -10,6 +15,12 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public void FadeSceneChange(string sceneName)
+    {
+        FadeOut(sceneName);
+        Invoke("FadeIn", _ChangeTime);
+    }
+    
     private static ChangeScene instance;
     public static ChangeScene Instance
     {
@@ -35,6 +46,22 @@ public class ChangeScene : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+    public void FadeOut(string sceneName)
+    {
+        _canvasGroup.color = new Color(0f, 0f, 0f, 0f);
+        _canvasGroup.DOFade(1, _ChangeTime).OnComplete(() =>
+        {
+            ChangeScene.Instance.SceneLoad(sceneName);
+        });
+
+    }
+
+
+    public void FadeIn()
+    {
+        _canvasGroup.color = new Color(0f, 0f, 0f, 1f);
+        _canvasGroup.DOFade(0, 2f);
     }
 
     public void TestMethod()
