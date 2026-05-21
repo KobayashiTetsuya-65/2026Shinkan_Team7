@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdfb15d006826894a90e82614bd0a49a, type: 3}
-  m_Name: Nomal
+  m_Name: Wasteland 1
   m_EditorClassIdentifier: 
-  biomeType: 0
-  stagePrefab: {fileID: 8512540696650696732, guid: c8811f35da3c0dc42a24940c23f548cf, type: 3}
+  biomeType: 1
+  stagePrefab: {fileID: 6988774994564018064, guid: 76781b22d7d89e048ab5af6632932311, type: 3}
   chunkLength: 150
