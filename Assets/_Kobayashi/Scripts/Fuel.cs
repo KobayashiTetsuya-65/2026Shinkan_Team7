@@ -42,6 +42,7 @@ public class Fuel : MonoBehaviour
 
         if (target.TryGetComponent(out FireBox fireBox))
         {
+            SoundManager.Instance.PlaySE(SEType.InFule);
             fireBox.AddFire(_firePower);
         }
         else

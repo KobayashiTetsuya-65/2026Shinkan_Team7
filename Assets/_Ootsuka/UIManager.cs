@@ -7,11 +7,13 @@ public class UIManager : MonoBehaviour
 
     public void Open()
     {
+        SoundManager.Instance.PlaySE(SEType.Button);
         _panel.SetActive(true);
     }
 
     public void CloseMenu()
     {
+        SoundManager.Instance.PlaySE(SEType.Button);
         _panel.SetActive(false);
     }
 

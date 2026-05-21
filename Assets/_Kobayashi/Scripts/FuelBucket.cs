@@ -14,7 +14,7 @@ public class FuelBucket : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDra
     public void OnBeginDrag(PointerEventData eventData)
     {
         if(_gameManager.IsCount || _gameManager.IsDead) return;
-
+        SoundManager.Instance.PlaySE(SEType.Grab);
         GameObject fuelObj =
            _gameManager.FuelObjectPool.GetObject();
 

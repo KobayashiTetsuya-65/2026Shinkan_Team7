@@ -136,6 +136,7 @@ public class GameManager : MonoBehaviour
         else if (_fireBox.CurrntFire >= 100)
         {
             _deathType = DeathType.OverHeat;
+            SoundManager.Instance.PlaySE(SEType.Explosion);
             OverHeatDeadAnimation();
             _fireBox.SetFire(2);
             IsDead = true;
