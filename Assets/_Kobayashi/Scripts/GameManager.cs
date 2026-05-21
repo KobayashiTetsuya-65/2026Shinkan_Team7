@@ -5,7 +5,7 @@ public enum StageType : int
 {
     Normal,
     Desert,
-    Wetland,
+    Snow,
     Wasteland
 }
 
