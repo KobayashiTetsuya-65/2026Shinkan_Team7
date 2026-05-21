@@ -1,7 +1,6 @@
-using DG.Tweening;
 using UnityEngine;
 
-public  class StoneMission : MissionObjectBase
+public class PushYZ : MonoBehaviour
 {
     private Rigidbody rb;
 
@@ -10,23 +9,18 @@ public  class StoneMission : MissionObjectBase
 
     [SerializeField]
     private float zPower = 10f;
-    private Transform _tr;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
-    public override void CrearAnimation()
-    {
-        base.CrearAnimation();
-        addforce();
-        _tr = transform;
-    }
-    private void addforce()
+
+    private void OnTriggerEnter(Collider other)
     {
         // Y方向とZ方向へ力を加える
         Vector3 force = new Vector3(0, yPower, zPower);
 
         rb.AddForce(force, ForceMode.Impulse);
-
+        
     }
 }
