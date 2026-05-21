@@ -1,7 +1,7 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
-public enum StageType
+public enum StageType : int
 {
     Normal,
     Desert,
@@ -102,6 +102,9 @@ public class GameManager : MonoBehaviour
             {
                 _stageTimer = 0;
                 //ステージ切り替え
+                int index = Random.Range(0, 4);
+                StageType nextStage = (StageType)index;
+                StageChange(nextStage);
             }
 
             if(_missionTimer >= _missionTime)
