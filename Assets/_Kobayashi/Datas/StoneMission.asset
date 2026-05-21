@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: StoneMission
   m_EditorClassIdentifier: 
   _missionType: 1
-  _missionName: "100m\u5148\u306B\u77F3\u304C\u51FA\u305F\u3088\uFF01\n\u30E1\u30FC\u30BF\u30FC\u309280\u307E\u3067\u4E0A\u3052\u3088\u3046\uFF01"
+  _missionName: "1000m\u5148\u306B\u77F3\u3092\u767A\u898B\uFF01\n\u30E1\u30FC\u30BF\u30FC\u309280\u307E\u3067\u4E0A\u3052\u3088\u3046\uFF01"
   _prefab: {fileID: 7835623493489872216, guid: 814ed5f6080526c458c13109b4063be9, type: 3}
   _fowerdMeter: 1000

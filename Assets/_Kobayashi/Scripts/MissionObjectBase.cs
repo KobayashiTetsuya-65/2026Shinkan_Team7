@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class MissionObjectBase : MonoBehaviour,IObjectMission
 {
     public bool IsCorrect => _isCorrect;
+    public float CorrentValue => _correctValue;
     [SerializeField,Header("€ˆöİ’è")]
     private DeathType _deathType;
     [Header("-----¬Œ÷”»’è-----")]
