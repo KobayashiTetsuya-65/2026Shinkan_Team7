@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _deathType: 2
   _isUpper: 1
-  _correctValue: 80
+  _correctValue: 75
   yPower: 20
   zPower: 40
 --- !u!54 &-8092016976524073689
