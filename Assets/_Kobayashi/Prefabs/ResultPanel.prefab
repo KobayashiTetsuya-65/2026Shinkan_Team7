@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 7636933559987673835}
   - component: {fileID: 7384773904645995214}
   - component: {fileID: 4866084402662933282}
-  - component: {fileID: 3669475964691971499}
+  - component: {fileID: 6492952736550248992}
   m_Layer: 5
   m_Name: TitleButton
   m_TagString: Untagged
@@ -339,9 +339,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3669475964691971499}
-        m_TargetAssemblyTypeName: Fade, Assembly-CSharp
-        m_MethodName: Change_button
+      - m_Target: {fileID: 6492952736550248992}
+        m_TargetAssemblyTypeName: GetComponentCaller, Assembly-CSharp
+        m_MethodName: SceneChange_button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -351,7 +351,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3669475964691971499
+--- !u!114 &6492952736550248992
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,11 +360,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2805292541532274824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 154ac77c30f9e964aa021d443bbf3eaf, type: 3}
+  m_Script: {fileID: 11500000, guid: 386966c14e3354f41be3112da7e75a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvasGroup: {fileID: 0}
-  _sceneName: Title
+  _sceneName: Title_urakawa
 --- !u!1 &3471447817366121838
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,7 +924,7 @@ GameObject:
   - component: {fileID: 7402299027716669315}
   - component: {fileID: 7346510469113900759}
   - component: {fileID: 1533593218237511333}
-  - component: {fileID: 6858392240252187651}
+  - component: {fileID: 6313505548869923873}
   m_Layer: 5
   m_Name: RetryButton
   m_TagString: Untagged
@@ -1035,9 +1034,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6858392240252187651}
-        m_TargetAssemblyTypeName: Fade, Assembly-CSharp
-        m_MethodName: Change_button
+      - m_Target: {fileID: 6313505548869923873}
+        m_TargetAssemblyTypeName: GetComponentCaller, Assembly-CSharp
+        m_MethodName: SceneChange_button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1047,7 +1046,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6858392240252187651
+--- !u!114 &6313505548869923873
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1056,8 +1055,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8101949243846111626}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 154ac77c30f9e964aa021d443bbf3eaf, type: 3}
+  m_Script: {fileID: 11500000, guid: 386966c14e3354f41be3112da7e75a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canvasGroup: {fileID: 0}
-  _sceneName: InGame_Aki
+  _sceneName: InGame
