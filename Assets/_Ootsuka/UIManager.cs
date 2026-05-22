@@ -16,5 +16,4 @@ public class UIManager : MonoBehaviour
         SoundManager.Instance.PlaySE(SEType.Button);
         _panel.SetActive(false);
     }
-
 }

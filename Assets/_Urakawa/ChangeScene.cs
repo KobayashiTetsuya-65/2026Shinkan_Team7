@@ -18,7 +18,7 @@ public class ChangeScene : MonoBehaviour
     public void FadeSceneChange(string sceneName)
     {
         FadeOut(sceneName);
-        Invoke("FadeIn", _ChangeTime);
+        //Invoke("FadeIn", _ChangeTime);
     }
     
     private static ChangeScene instance;
@@ -53,6 +53,7 @@ public class ChangeScene : MonoBehaviour
         _canvasGroup.DOFade(1, _ChangeTime).OnComplete(() =>
         {
             ChangeScene.Instance.SceneLoad(sceneName);
+            FadeIn();
         });
 
     }
