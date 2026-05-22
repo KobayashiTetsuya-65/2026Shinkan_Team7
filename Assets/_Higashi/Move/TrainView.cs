@@ -37,6 +37,6 @@ public class TrainView : MonoBehaviour
     private void SpeedEffect()
     {
         if (_fireBox == null || _speedEffectImage == null) return;
-        _speedEffectImage.color = new Color(1, 1, 1, Mathf.Clamp01(_fireBox.CurrntFire / 100f));
+        _speedEffectImage.color = new Color(1, 1, 1, Mathf.InverseLerp(50f, 100f, _fireBox.CurrntFire));
     }
 }
