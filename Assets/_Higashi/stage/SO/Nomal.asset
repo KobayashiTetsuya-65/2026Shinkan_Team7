@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Nomal
   m_EditorClassIdentifier: 
   biomeType: 0
-  stagePrefab: {fileID: 8512540696650696732, guid: c8811f35da3c0dc42a24940c23f548cf, type: 3}
+  stagePrefab: {fileID: 1275313051970668718, guid: 761562319602c8c4e9771cb65fdefe7d, type: 3}
   chunkLength: 150
