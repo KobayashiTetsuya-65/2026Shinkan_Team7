@@ -8,6 +8,8 @@ public enum SEType
     Explosion,
     Button,
     InFule,
+    Aramu,
+    Kati,
 }
 public enum BGMType
 {
@@ -123,23 +125,24 @@ public class SoundManager : MonoBehaviour
             Debug.LogWarning($"{type}が登録されていません！");
             return;
         }
+        _bgmSource.PlayOneShot(_seDictionary[type].clip, _seDictionary[type].volume);
         // 新しくAudioSourceを作る
-        AudioSource seSource = gameObject.AddComponent<AudioSource>();
-
-        // 辞書から再生する音をセットする
-        var (clip, volume) = _seDictionary[type];
-
-        seSource.clip = clip;
-        // 音量をセット
-        seSource.volume = volume;
-
-        // ループしない
-        seSource.loop = false;
-
-        // 再生
-        seSource.Play();
-
-        // 再生が終わったら削除
-        Destroy(seSource, seSource.clip.length);
+        //AudioSource seSource = gameObject.AddComponent<AudioSource>();
+        //
+        //// 辞書から再生する音をセットする
+        //var (clip, volume) = _seDictionary[type];
+        //
+        //seSource.clip = clip;
+        //// 音量をセット
+        //seSource.volume = volume;
+        //
+        //// ループしない
+        //seSource.loop = false;
+        //
+        //// 再生
+        //seSource.Play();
+        //
+        //// 再生が終わったら削除
+        //Destroy(seSource, seSource.clip.length);
     }
 }
