@@ -309,37 +309,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2097369216}
     - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
-      propertyPath: _addspeed
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
-      propertyPath: _particle
-      value: 
-      objectReference: {fileID: 1998830269065593993, guid: b70fbea4bc8994749ba52e4f560f9f28, type: 3}
-    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
       propertyPath: _countText
       value: 
       objectReference: {fileID: 1815650802}
     - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
-      propertyPath: _deathTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
-      propertyPath: _decreaseFire
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
       propertyPath: _whistleGauge
       value: 
       objectReference: {fileID: 1958343886}
-    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
-      propertyPath: _decreaseSpeed
-      value: -0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
-      propertyPath: _eventParticle
-      value: 
-      objectReference: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
     - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
       propertyPath: _missionManager
       value: 
@@ -1186,10 +1162,6 @@ PrefabInstance:
     - target: {fileID: 123269296414305586, guid: 3e9f7edf5d760f24ab5f527ecc130f9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2228248556646903693, guid: 3e9f7edf5d760f24ab5f527ecc130f9a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.0334
       objectReference: {fileID: 0}
     - target: {fileID: 8143944299367484287, guid: 3e9f7edf5d760f24ab5f527ecc130f9a, type: 3}
       propertyPath: m_Name
