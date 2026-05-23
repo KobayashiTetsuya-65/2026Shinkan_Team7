@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 386966c14e3354f41be3112da7e75a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: Title_urakawa
+  _sceneName: Title
 --- !u!1 &3471447817366121838
 GameObject:
   m_ObjectHideFlags: 0

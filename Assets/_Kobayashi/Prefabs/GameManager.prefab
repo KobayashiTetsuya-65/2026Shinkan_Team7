@@ -45,10 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f4852da9d2f2649b22b92241ff31e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _player: {fileID: 0}
   FuelObjectPool: {fileID: 2544337188826175745}
   Canvas: {fileID: 0}
   _fireBox: {fileID: 0}
-  _decreaseFire: -0.15
+  _missionManager: {fileID: 0}
+  _whistleGauge: {fileID: 0}
+  _countText: {fileID: 0}
+  _particleParent: {fileID: 0}
+  _particle: {fileID: 1998830269065593993, guid: b70fbea4bc8994749ba52e4f560f9f28, type: 3}
+  _eventParticleParent: {fileID: 0}
+  _eventParticle: {fileID: 1998830269065593993, guid: b70fbea4bc8994749ba52e4f560f9f28, type: 3}
+  _decreaseFire: -2.5
+  _stageChangeTime: 15
+  _missionTime: 10
+  _addspeed: 0.001
+  _decreaseSpeed: -0.005
+  _deathTime: 2
 --- !u!114 &2544337188826175745
 MonoBehaviour:
   m_ObjectHideFlags: 0

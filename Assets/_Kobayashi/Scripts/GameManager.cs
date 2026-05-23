@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
     private float _stageTimer = 0,_missionTimer = 0,_deathTimer = 0;
 
 
+
     private void Awake()
     {
         Instance = this;
@@ -110,8 +111,13 @@ public class GameManager : MonoBehaviour
             if(_missionTimer >= _missionTime)
             {
                 _missionTimer = 0;
-                _missionManager.StartMission(MissionType.Stone);
+                _missionManager.StartMission((MissionType)Random.Range(0, 2));
                 _isMission = true;
+            }
+
+            if(_fireBox.CurrntFire % 10 == 0)
+            {
+                SoundManager.Instance.PlaySE(SEType.Kati);
             }
         }
         else
