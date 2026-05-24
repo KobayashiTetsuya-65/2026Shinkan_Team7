@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public  class StoneMission : MissionObjectBase
+public class WoodMission : MissionObjectBase
 {
     private Rigidbody rb;
 
@@ -22,7 +22,7 @@ public  class StoneMission : MissionObjectBase
     }
     private void addforce()
     {
-        // Yæ–¹å‘ã¨Zæ–¹å‘ã¸åŠ›ã‚’åŠ ãˆã‚‹
+        // Y•ûŒü‚ÆZ•ûŒü‚Ö—Í‚ğ‰Á‚¦‚é
         Vector3 force = new Vector3(0, yPower, zPower);
 
         rb.AddForce(force, ForceMode.Impulse);

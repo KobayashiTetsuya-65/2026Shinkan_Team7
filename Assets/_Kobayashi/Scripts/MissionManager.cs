@@ -1,6 +1,5 @@
-using DG.Tweening;
+
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MissionManager : MonoBehaviour
@@ -26,10 +25,11 @@ public class MissionManager : MonoBehaviour
     {
         MissionData mission = _missionDatas.GetCardData(missionType);
         GameObject obj = Instantiate(mission.Prefab,
-            _player.transform.position + new Vector3(0f, 1f, mission.FowerdMeter),
+            _player.transform.position + new Vector3(0f, 0.5f, mission.FowerdMeter),
             Quaternion.identity);
 
         //UIâÊñ ë§Ç…ââèo
+        SoundManager.Instance.PlaySE(SEType.Aramu);
         _warningText.gameObject.SetActive(true);
         _panel.SetActive(true);
         _warningText.text = mission.MissionName;

@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public abstract class MissionObjectBase : MonoBehaviour,IObjectMission
+public abstract class MissionObjectBase : MonoBehaviour, IObjectMission
 {
     public bool IsCorrect => _isCorrect;
     public float CorrentValue => _correctValue;
-    [SerializeField,Header("€ˆöİ’è")]
+    [SerializeField, Header("€ˆöİ’è")]
     private DeathType _deathType;
     [Header("-----¬Œ÷”»’è-----")]
     [SerializeField] private bool _isUpper = true;
@@ -19,7 +19,7 @@ public abstract class MissionObjectBase : MonoBehaviour,IObjectMission
     {
         if (other.CompareTag("Player"))
         {
-            if(_gameManager == null) _gameManager = GameManager.Instance;
+            if (_gameManager == null) _gameManager = GameManager.Instance;
             float value = _gameManager.FireBox.CurrntFire;
             if (_isUpper)
             {
@@ -30,7 +30,7 @@ public abstract class MissionObjectBase : MonoBehaviour,IObjectMission
                 _isCorrect = value <= _correctValue;
             }
 
-            if(_isCorrect)
+            if (_isCorrect)
                 CrearAnimation();
             else
             {
@@ -38,12 +38,13 @@ public abstract class MissionObjectBase : MonoBehaviour,IObjectMission
                 //¸”s
             }
 
-            _gameManager.FinishMission(_isCorrect,_deathType);
+            _gameManager.FinishMission(_isCorrect, _deathType);
         }
     }
 
     public virtual void CrearAnimation()
     {
+        SoundManager.Instance.PlaySE(SEType.Attack);
         Debug.Log("“Ë”jIII");
     }
 }

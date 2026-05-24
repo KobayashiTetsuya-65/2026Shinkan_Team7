@@ -30,7 +30,7 @@ public class FireBox : MonoBehaviour
     void Start()
     {
         _gameManager = GameManager.Instance;
-        AddFire(_startFire,true);
+        AddFire(_startFire, true);
     }
 
     public void DecreaseFire(float delta)
@@ -40,15 +40,15 @@ public class FireBox : MonoBehaviour
             0, 100);
         ChangeFire(target);
     }
-    public void AddFire(float delta,bool isStart = false)
+    public void AddFire(float delta, bool isStart = false)
     {
         IsIncrease = true;
-        float target = Mathf.Clamp(CurrntFire + (delta*CurrentDeltaMag(_gameManager.CurrentStageType)),
+        float target = Mathf.Clamp(CurrntFire + (delta * CurrentDeltaMag(_gameManager.CurrentStageType)),
             0, 110);
 
         if (isStart)
         {
-            ChangeFire(target,3.5f);
+            ChangeFire(target, 3.5f);
         }
         else
         {
@@ -58,10 +58,10 @@ public class FireBox : MonoBehaviour
 
     public void SetFire(float value)
     {
-        float target = Mathf.Clamp(value,0,100);
-        ChangeFire(target,0.5f);
+        float target = Mathf.Clamp(value, 0, 100);
+        ChangeFire(target, 0.5f);
     }
-    private void ChangeFire(float target,float duration = 0.2f)
+    private void ChangeFire(float target, float duration = 0.2f)
     {
         _fireTween?.Kill();
 

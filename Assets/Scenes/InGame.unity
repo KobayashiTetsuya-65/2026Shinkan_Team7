@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 416ee80c6a09f9b4fb43d9aa43f4a057, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -309,37 +309,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2097369216}
     - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
-      propertyPath: _addspeed
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
-      propertyPath: _particle
-      value: 
-      objectReference: {fileID: 8218216832530016474, guid: 9b2f6ed60f44b004aaf540699f57cbf2, type: 3}
-    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
       propertyPath: _countText
       value: 
       objectReference: {fileID: 1815650802}
     - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
-      propertyPath: _deathTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
-      propertyPath: _decreaseFire
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
       propertyPath: _whistleGauge
       value: 
       objectReference: {fileID: 1958343886}
-    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
-      propertyPath: _decreaseSpeed
-      value: -0.005
-      objectReference: {fileID: 0}
-    - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
-      propertyPath: _eventParticle
-      value: 
-      objectReference: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
     - target: {fileID: 5915727727983016171, guid: d77bb7ffcdd08b644b62ead49023e9be, type: 3}
       propertyPath: _missionManager
       value: 
@@ -441,7 +417,7 @@ Transform:
   m_GameObject: {fileID: 238504721}
   serializedVersion: 2
   m_LocalRotation: {x: 0.14780942, y: 0, z: 0, w: 0.9890159}
-  m_LocalPosition: {x: 0, y: 16, z: -20}
+  m_LocalPosition: {x: 0, y: 16.900002, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1153,7 +1129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 123269296414305586, guid: 3e9f7edf5d760f24ab5f527ecc130f9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 123269296414305586, guid: 3e9f7edf5d760f24ab5f527ecc130f9a, type: 3}
       propertyPath: m_LocalPosition.z

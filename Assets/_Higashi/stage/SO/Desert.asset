@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Desert
   m_EditorClassIdentifier: 
   biomeType: 1
-  stagePrefab: {fileID: 376545216051750019, guid: f6516ae7bbf62b8498762c2f521773b2, type: 3}
+  stagePrefab: {fileID: 9219665660880219316, guid: de5543eb49fcc7147904054370f7f246, type: 3}
   chunkLength: 150
