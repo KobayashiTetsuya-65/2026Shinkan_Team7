@@ -48,6 +48,8 @@ public class WhistleGauge : MonoBehaviour
         whistleBar.fillAmount = _currentSteam;
         if (_currentSteam >= 1)
         {
+            if(!IsFull)
+                _rope.CanStartWhistle();
             IsFull = true;
         }
         else if(_currentSteam <= 0)

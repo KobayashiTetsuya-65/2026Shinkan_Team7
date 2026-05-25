@@ -6,6 +6,7 @@ public class WhistleRope : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 {
     [SerializeField] private WhistleGauge _gauge;
     [Header("-----数値設定-----")]
+    [SerializeField, Header("隠れてる時の始点の位置")] private float _hideStartY;
     [SerializeField, Header("始点の高さ")] private float _startY;
     [SerializeField, Header("終点の高さ")] private float _finishY;
     [SerializeField, Header("演出時間")] private float _duration = 0.3f;
@@ -17,6 +18,7 @@ public class WhistleRope : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     {
         _gameManager = GameManager.Instance;
         _rt = GetComponent<RectTransform>();
+        _rt.anchoredPosition = new Vector2(_rt.anchoredPosition.x, _hideStartY);
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -48,10 +50,18 @@ public class WhistleRope : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
         _moveTween?.Kill();
 
-        _moveTween = _rt.DOAnchorPosY(_startY, _duration)
+        _moveTween = _rt.DOAnchorPosY(_hideStartY, _duration)
             .SetEase(Ease.Linear);
     }
 
+    public void CanStartWhistle()
+    {
+        if (_gameManager.IsCount || _gameManager.IsDead) return;
+        _moveTween?.Kill();
+
+        _moveTween = _rt.DOAnchorPosY(_startY, _duration)
+            .SetEase(Ease.Linear);
+    }
     public void OnDrag(PointerEventData eventData)
     {
 
