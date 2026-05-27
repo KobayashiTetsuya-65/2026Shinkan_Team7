@@ -115,7 +115,7 @@ public class GameManager : MonoBehaviour
                 _isMission = true;
             }
 
-            if(_fireBox.CurrntFire % 10 == 0)
+            if((int)_fireBox.CurrntFire % 10 == 0)
             {
                 SoundManager.Instance.PlaySE(SEType.Kati);
             }

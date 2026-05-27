@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class FuelBucket : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDragHandler,IPointerClickHandler
+public class FuelBucket : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler,IBeginDragHandler, IDragHandler, IEndDragHandler,IPointerClickHandler
 {
+    [SerializeField] private ImageInteract _ii;
     private GameManager _gameManager;
     private Fuel _currentFuel;
 
@@ -40,6 +41,16 @@ public class FuelBucket : MonoBehaviour,IBeginDragHandler, IDragHandler, IEndDra
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        
+
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        _ii.SelectAnimation();
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        _ii.NotSelectAnimation();
     }
 }
