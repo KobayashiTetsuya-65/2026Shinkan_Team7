@@ -3891,7 +3891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3780009843156355124, guid: 8e9de3aa92097b54a9e0f22bf7866769, type: 3}
       propertyPath: _ChangeTime
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5932442156787316540, guid: 8e9de3aa92097b54a9e0f22bf7866769, type: 3}
       propertyPath: m_Name
